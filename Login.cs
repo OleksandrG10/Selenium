@@ -32,18 +32,18 @@ namespace SeleniumLoginTest
             driver.Navigate().GoToUrl(baseUrl);
 
             // Locate username and password fields and enter credentials
-            IWebElement usernameField = driver.FindElement(By.Id("username")); // Replace with the actual ID or other locator
-            IWebElement passwordField = driver.FindElement(By.Id("password")); // Replace with the actual ID or other locator
-            IWebElement loginButton = driver.FindElement(By.Id("loginButton")); // Replace with the actual ID or other locator
+            IWebElement usernameField = driver.FindElement(By.Id("username")); 
+            IWebElement passwordField = driver.FindElement(By.Id("password")); 
+            IWebElement loginButton = driver.FindElement(By.Id("loginButton"));
 
-            usernameField.SendKeys("YOUR_USERNAME"); // Replace with your username
-            passwordField.SendKeys("YOUR_PASSWORD"); // Replace with your password
+            usernameField.SendKeys("YOUR_USERNAME"); 
+            passwordField.SendKeys("YOUR_PASSWORD"); 
             loginButton.Click();
 
             // Verification: Check for a successful login indicator (e.g., a welcome message, a specific element on the logged-in page)
             try
             {
-                IWebElement welcomeMessage = driver.FindElement(By.Id("welcomeMessage")); // Replace with the actual ID or other locator of the element that appears after succesful login.
+                IWebElement welcomeMessage = driver.FindElement(By.Id("welcomeMessage")); 
                 Assert.IsTrue(welcomeMessage.Displayed);
                 Console.WriteLine("Login successful!");
             }
@@ -70,7 +70,7 @@ namespace SeleniumLoginTest
             // Verification: Check for an error message or other indication of a failed login
             try
             {
-                IWebElement errorMessage = driver.FindElement(By.Id("errorMessage")); // Replace with the actual ID or other locator
+                IWebElement errorMessage = driver.FindElement(By.Id("errorMessage")); 
                 Assert.IsTrue(errorMessage.Displayed);
                 Console.WriteLine("Login failed as expected.");
             }
